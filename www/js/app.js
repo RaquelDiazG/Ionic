@@ -43,7 +43,7 @@ angular.module('starter', ['ionic', 'FilmsModule'])
                         url: '/films',
                         views: {
                             'content': {
-                                templateUrl: 'js/app/films/films.html',
+                                templateUrl: 'js/app/films/Films/films.html',
                                 controller: 'FilmsController'
                             }
                         }
@@ -52,7 +52,7 @@ angular.module('starter', ['ionic', 'FilmsModule'])
                         url: '/films-detail',
                         views: {
                             'content': {
-                                templateUrl: 'js/app/films/films-detail.html',
+                                templateUrl: 'js/app/films/FilmsDetails/films-detail.html',
                                 controller: 'FilmDetailsController'
                             }
                         }
