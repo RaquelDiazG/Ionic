@@ -44,16 +44,26 @@ angular.module('starter', ['ionic', 'FilmsModule'])
                         views: {
                             'content': {
                                 templateUrl: 'js/app/films/Films/films.html',
-                                controller: 'FilmsController'
+                                controller: 'FilmsController',
+                                resolve: {
+                                    films: function (FilmsService) {
+                                        return FilmsService.getFilms();
+                                    }
+                                }
                             }
                         }
                     })
                     .state('app.films-detail', {
-                        url: '/films-detail',
+                        url: '/films/detail/:filmTitle',
                         views: {
                             'content': {
                                 templateUrl: 'js/app/films/FilmsDetails/films-detail.html',
-                                controller: 'FilmDetailsController'
+                                controller: 'FilmDetailsController',
+                                resolve: {
+                                    film: function (FilmsService, $stateParams) {
+                                        return FilmsService.getFilm($stateParams.filmTitle);
+                                    }
+                                }
                             }
                         }
                     })

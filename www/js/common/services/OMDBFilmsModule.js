@@ -34,7 +34,7 @@ angular.module('OMDBFilmsModule', ['FilmModel'])
                 return url;
             }
             var selectFilmByTitle = function (title) {
-                for (var i = 0; i < filmsService.films.lenght; i++) {
+                for (var i = 0; i < filmsService.films.length; i++) {
                     if (filmsService.films[i].title === title) {
                         return filmsService.films[i];
                     }
